@@ -1,3 +1,4 @@
+//백준 2309번: 일곱 난쟁이
 #include<iostream>
 #include<vector>
 using namespace std;
