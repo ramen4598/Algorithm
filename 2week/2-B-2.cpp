@@ -31,7 +31,9 @@ int main(){
 	cin >> t;
 	for(int test_case = 1; test_case <= t; test_case++){
 		int ret = 0;
-		int a[max_n][max_m] = {{0}}, visited[max_n][max_m] ={{0}};
+		int a[max_n][max_m], visited[max_n][max_m];
+		fill(&a[0][0], &a[0][0] + max_n * max_m, 0);
+		fill(&visited[0][0], &visited[0][0] + max_n * max_m, 0);
 		cin >> m >> n >> k;
 		for(int i=0; i<k; i++){
 			int x, y;

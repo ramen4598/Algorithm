@@ -1,12 +1,11 @@
 //백준 2468번: 안전 영역
 #include <iostream>
-#include <cstring>
 
 using namespace std;
 
 const int max_n = 100;
 int n, max_h=0, ret=0; 
-int a[max_n][max_n]={{0}}, visited[max_n][max_n]={{0}};
+int a[max_n][max_n], visited[max_n][max_n];
 int dy[] = {-1,0,1,0};
 int dx[] = {0,1,0,-1};
 
@@ -29,6 +28,8 @@ int main(){
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 	
+	fill(&a[0][0], &a[0][0] + 100 * 100, 0);
+
 	cin >> n;
 	for(int y=0; y<n; y++){
 		for(int x=0; x<n; x++){
@@ -38,11 +39,9 @@ int main(){
 			a[y][x] = tmp;
 		}
 	}
-	for(int h=1; h<= max_h; h++){
+	for(int h=0; h<= max_h; h++){
 		int cnt = 0;
-		memset(visited, 0, sizeof(visited));
-		//또는 
-		//fill(&visited[0][0], &visited[0][0] + 101 * 101, 0);
+		fill(&visited[0][0], &visited[0][0] + 100 * 100, 0);
 		for(int y=0; y<n; y++){
 			for(int x=0; x<n; x++){
 				if(a[y][x] > h && !visited[y][x]){
