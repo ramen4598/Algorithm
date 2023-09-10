@@ -12,16 +12,16 @@ int main(){
 
   cin >> H >> W;
   for(int i=0; i<H; i++){
-    bool isClody = false;
+    bool isCloudy = false;
     int cnt = 0;
     for(int j=0; j<W; j++){
       char input; cin >> input;
       cnt++;
       if(input == 'c'){
         ret[i][j]=0;
-        isClody=true;
+        isCloudy=true;
         cnt=0;
-      }else if(isClody){
+      }else if(isCloudy){
         ret[i][j]=cnt;
       }else{
         ret[i][j]=-1;
